@@ -28,6 +28,7 @@ file_work () {
         if [[ "$OSTYPE" == "darwin"* ]]; then
             if [ -d "~/Music" ];  then rm -rf "~/Music";  fi;
             if [ -d "~/Public" ]; then rm -rf "~/Public"; fi;
+        fi
     fi
 }
 
@@ -45,13 +46,12 @@ ls_colors () {
     alias s="ls";
     alias sl="ls";
     if [ -e "$(which dircolors)" ]; then
-        if [ "$TERM" = "xterm-256color" -a -e ~/.dir_colors.256 ]; then
-            eval $(dircolors ~/.dir_colors.256);
+        if [ "$TERM" = "xterm-256color" -a -e ~/.dircolors.256 ]; then
+            eval $(dircolors ~/.dircolors.256);
         else
-            eval $(dircolors ~/.dir_colors);
+            eval $(dircolors ~/.dircolors);
         fi;
     fi;
-    eval $(dircolors -b $HOME/.dircolors)
 }
 
 bash_options () { 
@@ -129,16 +129,18 @@ clean_path () {
 }
 
 conda_init () { 
-    __conda_setup="$('/home/jensenq/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)";
+    conda_dir="$HOME/tools_n_packages/miniconda3";
+    __conda_setup="$( $conda_dir'/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
-        eval "$__conda_setup";
+        eval "$__conda_setup"
     else
-        if [ -f "/home/jensenq/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/jensenq/miniconda3/etc/profile.d/conda.sh";
+        if [ -f "$conda_dir/etc/profile.d/conda.sh" ]; then
+					 echo "d"
+            . "$conda_dir/etc/profile.d/conda.sh"  
         else
-            export PATH="/home/jensenq/miniconda3/bin:$PATH";
-        fi;
-    fi;
+            export PATH="$conda_dir'/bin:$PATH"
+        fi
+    fi
     unset __conda_setup
 }
 
@@ -149,7 +151,7 @@ main ()
     bash_options;
     ls_colors;
     misc_options;
-    conda init;
+    conda_init;
     file_work;
 
     pathadd /usr/sbin;
@@ -161,3 +163,8 @@ main ()
     source_if_exists /etc/bashrc;
     source_if_exists /usr/local/tools/dotkit/init.sh
 }
+
+main
+
+
+
