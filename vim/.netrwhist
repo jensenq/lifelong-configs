@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/slop/.vim'
+let g:netrw_dirhist_2='/Users/slop/.vim/bundled/vim-cool'
+let g:netrw_dirhist_1='/Users/slop/.vim/bundle/vim-cool'
+let g:netrw_dirhist_0='/Users/slop/.vim/bundle/matchit'
+let g:netrw_dirhist_9='/Users/slop/.vim/autoload/vim-pathogen/autoload'
+let g:netrw_dirhist_8='/Users/slop/.vim/autoload/vim-pathogen'
+let g:netrw_dirhist_7='/Users/slop/.vim/bundle'
+let g:netrw_dirhist_6='/Users/slop/projects/non-current/classwork/chronic-symptom-tracker'
+let g:netrw_dirhist_5='/Users/slop/projects/add_logger/css'
+let g:netrw_dirhist_4='/Users/slop/projects/non-current'
