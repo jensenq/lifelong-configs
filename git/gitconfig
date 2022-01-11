@@ -1,0 +1,40 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	email = quentinjensen@c-67-201-229-20.reshall.wwu.edu
+[user]
+	name = jensenq
+	email = jensenq@wwu.edu
+[diff]
+	tool = vimdiff
+[pull]
+	rebase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status -u
+    dif = diff
+    last = log -1 HEAD
+    unstage = reset HEAD --
+    #pof = push origin --force-with-lease
+    pof = push origin --force
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase -i
+    rbm = rebase -i master
+    rbp = rebase -i production
+    rbs = rebase --skip
+    com = checkout master
+    cop = checkout production
+    cp = cherry-pick --
+    cam = commit --amend
+    bp = big-picture
+    lb = for-each-ref --format='%(refname:short)' \
+        --sort=-authordate --count=8 refs/heads/
+    sed = ! git grep -z --full-name -l '.' | xargs -0 sed -i -r -e

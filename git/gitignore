@@ -1,0 +1,50 @@
+data/
+mnist/
+cifar-10-batches-py/
+cifar-10-python.tar.gz
+lightning_logs/
+tiny_timit/
+tiny_timit.tar.bz2
+
+
+final_proj/dialect_id/wandb/
+final_proj/fake_detect/wandb/
+final_proj/g2p/wandb/
+final_proj/speaker_ver/wandb/
+final_proj/weather_loc/wandb/
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec

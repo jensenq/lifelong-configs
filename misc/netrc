@@ -1,0 +1,3 @@
+machine api.wandb.ai
+  login user
+  password 320a750fecf2a13e27faf580f1dd34fc14821489
